@@ -1,2 +1,5 @@
 node_modules/
 .env
+# add node_modules/ to .gitignore to prevent committing dependencies
+node_modules/
+# add .env to .gitignore to prevent committing sensitive environment variables
