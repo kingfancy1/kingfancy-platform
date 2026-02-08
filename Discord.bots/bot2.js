@@ -13,15 +13,15 @@ client.once('ready', async () => {
     try {
         await rest.put(Routes.applicationGuildCommands('1469227081069101180', config.guildId), { body: commands });
         console.log('✅ Commands Registered');
-    } catch (e) { console.error(e); }
+    } catch (e) { 
+        console.error('❌ Command Registration Error:', e);
+    }
 });
 
 client.on('interactionCreate', async (interaction) => {
-    // 1️⃣ Handle Slash Commands
     if (interaction.isChatInputCommand()) {
         const { commandName } = interaction;
 
-        // Admin Setup Command
         if (commandName === 'setup-tickets') {
             const adminId = '1460035511962828841'; 
             if (!interaction.member.roles.cache.has(adminId)) {
@@ -36,7 +36,7 @@ client.on('interactionCreate', async (interaction) => {
                     { label: 'General Support', value: 'support', emoji: '🛠️' },
                     { label: 'Product Not Received', value: 'product_not_received', emoji: '📦' },
                     { label: 'VPN Support', value: 'vpn', emoji: '🌐' },
-                    { label: 'FiveM Support', value: 'fivem', emoji: '🏎️' },
+                    { label: 'FiveM Support', value: 'fivem', emoji: '🎮' },
                     { label: 'Fortnite Support', value: 'fortnite', emoji: '⛏️' }
                 ]);
 
@@ -46,7 +46,6 @@ client.on('interactionCreate', async (interaction) => {
             });
         }
 
-        // Staff Commands (Claim & Close)
         const staffId = '1460036540372881501';
         if (['claim', 'close'].includes(commandName)) {
             if (!interaction.member.roles.cache.has(staffId)) {
@@ -64,7 +63,6 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 
-    // 2️⃣ Handle Menu Clicks (Creating the ticket)
     if (interaction.isStringSelectMenu() && interaction.customId === 'ticket_category') {
         const selected = interaction.values[0];
         const categoryId = config.ticketCategories[selected];
@@ -89,4 +87,6 @@ client.on('interactionCreate', async (interaction) => {
         await ticketChannel.send(`Welcome ${interaction.user}! Staff will be with you shortly.`);
     }
 });
+
 client.login(process.env.TICKET_BOT_TOKEN);
+

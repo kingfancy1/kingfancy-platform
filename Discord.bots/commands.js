@@ -11,4 +11,16 @@ module.exports = [
     .setDescription('Create the ticket opening panel')
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .toJSON(),
+
+  new SlashCommandBuilder()
+    .setName('claim')
+    .setDescription('Claim this ticket')
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
+    .toJSON(),
+
+  new SlashCommandBuilder()
+    .setName('close')
+    .setDescription('Close this ticket')
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
+    .toJSON(),
 ];
