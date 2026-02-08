@@ -73,19 +73,19 @@
         }
 
         .logo-crown {
-            font-size: 1.8rem;
-            background: linear-gradient(
-                90deg,
-                rgba(255,255,255,0.5) 0%,
-                rgba(255,255,255,1) 50%,
-                rgba(255,255,255,0.5) 100%
-            );
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: simpleLight 2s linear infinite;
-        }
+    font-size: 1.8rem;
+    background: linear-gradient(
+        90deg,
+        rgba(255,69,0,0.5) 0%,
+        rgba(255,69,0,1) 50%,
+        rgba(255,20,147,0.5) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: simpleLight 2s linear infinite;
+}
 
         .nav-links {
             display: flex;
@@ -93,29 +93,25 @@
             align-items: center;
         }
 
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-        }
+       .nav-links a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
 
-        .nav-links a:hover {
-            color: #fff;
-            text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-1px);
-        }
-
-        .nav-links a.active {
-            color: rgba(255, 255, 255, 1);
-            text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-        }
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.3) 0%, rgba(139, 0, 0, 0.3) 100%);
+    text-shadow: 0 0 15px rgba(255, 69, 0, 1), 0 0 25px rgba(255, 20, 147, 0.8);
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 30px rgba(255, 20, 147, 0.4);
+    border: 1px solid rgba(255, 69, 0, 0.5);
+}
 
         .search-container {
             background: rgba(255, 255, 255, 0.02);
@@ -708,46 +704,70 @@
             gap: 0;
         }
 
-        .btn-login {
-            background: transparent;
-            border: none;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            white-space: nowrap;
-        }
+       .btn-login {
+    padding: 0.7rem 1.8rem;
+    background: linear-gradient(135deg, #FF4500 0%, #8B0000 100%);
+    border: 1px solid #FF4500;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+}
 
-        .btn-login:hover { 
-            color: #fff;
-            background: rgba(255, 255, 255, 0.08);
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-        }
+.btn-login:hover { 
+    background: linear-gradient(135deg, #FF6347 0%, #FF1493 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.7), 0 0 40px rgba(255, 20, 147, 0.5);
+}
+       .btn-signup {
+    padding: 0.7rem 1.8rem;
+    background: linear-gradient(135deg, #FF4500 0%, #8B0000 100%);
+    border: 1px solid #FF4500;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+}
 
-        .btn-signup {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 0.95rem;
-            font-weight: 500;
-            padding: 0.5rem 1.3rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
+.btn-signup:hover {
+    background: linear-gradient(135deg, #FF6347 0%, #FF1493 100%);
+    border-color: #FF1493;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+}
+/* LOGIN DOT ANIMATION */
+.login-highlight {
+    position: relative;
+}
 
-        .btn-signup:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #fff;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
+.login-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    background: #FF1493;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px #FF1493;
+}
 
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
         /* Welcome text that shows after login */
         .welcome-text {
             font-size: 0.82rem;
@@ -1176,7 +1196,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF4500 0%, #8B0000 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1186,7 +1206,7 @@
 
 .user-avatar:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
 }
 
 .user-avatar span {
@@ -1339,7 +1359,7 @@
 .auth-submit {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF4500 0%, #FF1493 100%);
     border: none;
     border-radius: 8px;
     color: #fff;
@@ -1352,7 +1372,7 @@
 
 .auth-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
 }
 
 .auth-switch {
@@ -1363,7 +1383,7 @@
 }
 
 .auth-switch a {
-    color: #667eea;
+    color: #FF4500;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
@@ -1379,16 +1399,14 @@
     <!-- NAV (wired to existing modals/JS) -->
     <nav>
         <div class="logo">
-            <span class="logo-text">𝐊𝐢𝐧𝐠𝐅𝐚𝐧𝐜𝐲</span>
-            <span class="logo-crown">♕</span>
-        </div>
+    <img src="data:image/png;base64,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" alt="KingFancy" style="height: 40px;">
+</div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#" id="openStoreModal">Products</a>
-            <a href="#features">Info</a>
-            <a href="#" onclick="toggleAbout(); return false;">About Us</a>
-            <a href="#" onclick="toggleReviews(); return false;">Reviews</a>
-            <a href="#service">Service</a>
+    <a href="#home">Home</a>
+    <a href="#" id="openStoreModal">Products</a>
+    <a href="#" onclick="toggleReviews(); return false;">Reviews</a>
+    <a href="#service">Service</a>
+    <a href="#" onclick="openSupportModal(); return false;">Support</a>
 
             <div class="staff-dropdown">
                 <a href="#" id="staffBtn" onclick="toggleStaffDropdown(event)">Staff</a>
@@ -1411,12 +1429,13 @@
                     <span id="userInitials">U</span>
                 </div>
                 <div class="user-dropdown" id="userDropdown">
-                    <div class="user-info">
-                        <span id="userName">User</span>
-                        <span id="userEmail">user@email.com</span>
-                    </div>
-                    <a href="#" onclick="logout(); return false;">Logout</a>
-                </div>
+    <div class="user-info">
+        <span id="userName">User</span>
+        <span id="userEmail">user@email.com</span>
+    </div>
+    <a href="#" onclick="openSupportModal(); return false;">Support</a>
+    <a href="#" onclick="logout(); return false;">Logout</a>
+</div>
             </div>
         </div>
     </nav>
@@ -3316,7 +3335,41 @@ document.addEventListener('click', function(event) {
         closeSignupModal();
     }
 });
+// Support Modal Functions
+function openSupportModal() {
+    document.getElementById('supportModal').classList.add('active');
+}
 
+function closeSupportModal() {
+    document.getElementById('supportModal').classList.remove('active');
+}
+
+function submitSupport(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('supportName').value;
+    const email = document.getElementById('supportEmail').value;
+    const subject = document.getElementById('supportSubject').value;
+    const message = document.getElementById('supportMessage').value;
+    
+    // Here you would normally send to your backend
+    alert('Thank you ' + name + '! Your support request has been received. We will contact you at ' + email + ' soon.');
+    closeSupportModal();
+    
+    // Clear form
+    document.getElementById('supportName').value = '';
+    document.getElementById('supportEmail').value = '';
+    document.getElementById('supportSubject').value = '';
+    document.getElementById('supportMessage').value = '';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const supportModal = document.getElementById('supportModal');
+    if (event.target === supportModal) {
+        closeSupportModal();
+    }
+});
 </script>
 <!-- LOGIN MODAL -->
 <div class="auth-modal" id="loginModal">
@@ -3378,4 +3431,37 @@ document.addEventListener('click', function(event) {
 </div>
 
 </body>
+<!-- SUPPORT MODAL -->
+<!-- SUPPORT MODAL -->
+<div class="auth-modal" id="supportModal">
+    <div class="auth-modal-content" style="max-width: 500px;">
+        <button class="auth-close" onclick="closeSupportModal()">×</button>
+        <h2>Contact Support</h2>
+        <p>We're here to help! Send us a message.</p>
+        
+        <form onsubmit="submitSupport(event)">
+            <div class="form-group">
+                <label for="supportName">Your Name</label>
+                <input type="text" id="supportName" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="supportEmail">Email</label>
+                <input type="email" id="supportEmail" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="supportSubject">Subject</label>
+                <input type="text" id="supportSubject" placeholder="What do you need help with?" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="supportMessage">Message</label>
+                <textarea id="supportMessage" rows="5" placeholder="Describe your issue..." required style="width: 100%; padding: 0.9rem 1.2rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; font-size: 1rem; resize: vertical; font-family: inherit;"></textarea>
+            </div>
+            
+            <button type="submit" class="auth-submit">Send Message</button>
+        </form>
+    </div>
+</div>
 </html>
