@@ -1,32 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const session = require("express-session");
 const path = require("path");
 require("dotenv").config();
 
-const productRoutes = require("./routes/productRoutes");
-
 const app = express();
-// Railway needs process.env.PORT to bind correctly
-const PORT = process.env.PORT || 3001; 
+const PORT = process.env.PORT || 8080;
 
-/* ================= Middleware ================= */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "default_secret_for_dev",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: process.env.NODE_ENV === "production",
-    }
-  })
-);
-
-/* ================= HEALTH CHECK ================= */
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
@@ -35,25 +18,29 @@ app.get("/health", (req, res) => {
   });
 });
 
-/* ================= ROUTES ================= */
+const productRoutes = require("./routes/productRoutes");
 app.use("/api/products", productRoutes);
 
-/* ================= HOME ================= */
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-/* ================= Database & Server Start ================= */
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("✅ MongoDB Connected");
-
-    // Listening on 0.0.0.0 is best practice for cloud deployments like Railway
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
-    console.error("❌ MongoDB Connection Error:", err.message);
+    console.error("❌ MongoDB Error:", err.message);
+    console.log("⚠️  Starting without database...");
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 Server running on port ${PORT} (No DB)`);
+    });
   });
