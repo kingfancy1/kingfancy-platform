@@ -1,19 +1,22 @@
 {
   "name": "kingfancy-platform",
   "version": "1.0.0",
-  "description": "KingFancy Premium Services",
+  "description": "KingFancy Platform Web Services",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["discord", "services"],
+  "keywords": [
+    "discord",
+    "services"
+  ],
   "author": "KingFancy",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^8.0.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "express": "^4.22.1",
+    "mongoose": "^8.0.0"
   },
   "engines": {
     "node": ">=18.0.0"

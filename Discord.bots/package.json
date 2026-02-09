@@ -1,25 +1,21 @@
-
 {
-  "name": "kingfancy-discord-bots",
+  "name": "kingfancy-bots",
   "version": "1.0.0",
-  "description": "Discord verification and ticket system bots",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "start:verify": "node bot.js",
-    "start:ticket": "node bot2.js",
-    "dev": "node server.js"
+    "start-v": "node bot1.js",
+    "start-t": "node bot2.js",
+    "start": "node server.js"
   },
-  "keywords": ["discord", "bot", "verification", "tickets"],
-  "author": "KingFancy",
-  "license": "ISC",
   "dependencies": {
-    "discord-html-transcripts": "^3.2.0",
     "discord.js": "^14.25.1",
-    "dotenv": "^17.2.3",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
     "mongoose": "^8.22.1"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "main": "commands.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
