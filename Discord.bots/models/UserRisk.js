@@ -11,4 +11,4 @@ const userRiskSchema = new mongoose.Schema({
   lastUpdated: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('UserRisk', userRiskSchema);
+module.exports = mongoose.model('UserRisk', userRiskSchema);w
